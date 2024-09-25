@@ -3,10 +3,14 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 import "@app/App.css";
+import Footer from "@app/Footer.tsx";
+import Main from "@app/main/Main.tsx";
 
 function App() {
     return <>
-        <h1>Texsydo</h1>
+        <Main></Main>
+
+        <Footer></Footer>
     </>;
 }
 
