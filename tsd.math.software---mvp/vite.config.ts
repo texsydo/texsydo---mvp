@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Tobias Briones. All rights reserved.
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// This file is part of https://github.com/texsydo/texsydo---mvp
+
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
@@ -14,7 +18,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": resolve(__dirname, "src"),
-            "@app": resolve(__dirname, "src"),
+            "@app": resolve(__dirname, "src/app"),
         },
     },
 });

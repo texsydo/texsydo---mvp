@@ -2,4 +2,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
-/// <reference types="vite/client" />
+import "@app/App.css";
+
+function App() {
+    return <>
+        <h1>Texsydo</h1>
+    </>;
+}
+
+export default App;
