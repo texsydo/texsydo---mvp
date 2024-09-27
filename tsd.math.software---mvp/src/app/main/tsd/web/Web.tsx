@@ -60,7 +60,7 @@ interface CommandBlockProps {
 
 function SnippetBlock({ children, caption }: CommandBlockProps) {
     return <>
-        <figure>
+        <figure className="snippet-block compact">
             <div>
                 <pre>
                     <code className="d-block language-plaintext highlighter-rouge">

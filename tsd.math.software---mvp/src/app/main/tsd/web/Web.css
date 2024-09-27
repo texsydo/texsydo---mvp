@@ -81,3 +81,13 @@ h2 {
 .box:hover {
     background-color: #e0e0e0;
 }
+
+.snippet-block.compact code {
+    font-size: 0.6875rem;
+}
+
+@media (min-width: 1080px) {
+    .snippet-block.compact code {
+        font-size: 0.75rem;
+    }
+}
