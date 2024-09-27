@@ -4,6 +4,7 @@
 
 import Header from "@app/main/Header.tsx";
 import "@app/main/Main.css";
+import Web from "@app/main/tsd/web/Web.tsx";
 
 function Main() {
     return <>
@@ -15,6 +16,8 @@ function Main() {
 
                         <p>Textual System Documenting</p>
                     </section>
+
+                    <Web />
                 </article>
             </main>
         </section>
