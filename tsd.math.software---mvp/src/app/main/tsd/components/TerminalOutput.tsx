@@ -39,6 +39,9 @@ const itemToCssClass = (item: TerminalItem): string =>
     ? "check-icon"
     : classFromIcon(item.icon);
 
+const isItemBlank = (item: TerminalItem): boolean =>
+    itemToString(item).trim().length === 0;
+
 interface TerminalOutputProps {
     outputs: TerminalItem[];
 }
@@ -53,7 +56,11 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
                : output;
     };
 
-    const outputToItem = (output: TerminalItem) => <>
+    const emptyItem = <>
+        <div className="item blank"></div>
+    </>;
+
+    const newItem = (output: TerminalItem) => <>
         <div className="item">
             <FontAwesomeIcon
                 className={ itemToCssClass(output) }
@@ -63,6 +70,11 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
             <span>{ normalize(output) }</span>
         </div>
     </>;
+
+    const outputToItem = (output: TerminalItem) =>
+        isItemBlank(output)
+        ? emptyItem
+        : newItem(output);
 
     return <>
         <div className="terminal-output">
