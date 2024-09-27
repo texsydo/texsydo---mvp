@@ -4,43 +4,13 @@
 
 import "./TerminalOutput.css";
 import {
-    faCheck,
-    faGear,
-    IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+    isItemBlank,
+    itemToCssClass,
+    itemToIcon,
+    itemToString,
+    TerminalItem,
+} from "./TerminalItem.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-type TerminalIcon = "check" | "gear";
-
-const classFromIcon = (icon: TerminalIcon) => ({
-    check: "check-icon",
-    gear: "gear-icon",
-}[icon]);
-
-const faIcon = (icon: TerminalIcon): IconDefinition => ({
-    check: faCheck,
-    gear: faGear,
-}[icon]);
-
-type TerminalItem = string | { icon: TerminalIcon, value: string };
-
-const itemToString = (item: TerminalItem): string =>
-    typeof item === "string"
-    ? item
-    : item.value;
-
-const itemToIcon = (item: TerminalItem): IconDefinition =>
-    typeof item === "string"
-    ? faCheck
-    : faIcon(item.icon);
-
-const itemToCssClass = (item: TerminalItem): string =>
-    typeof item === "string"
-    ? "check-icon"
-    : classFromIcon(item.icon);
-
-const isItemBlank = (item: TerminalItem): boolean =>
-    itemToString(item).trim().length === 0;
 
 interface TerminalOutputProps {
     outputs: TerminalItem[];
@@ -56,12 +26,15 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
                : output;
     };
 
-    const emptyItem = <>
-        <div className="item blank"></div>
+    const emptyItem = (index: number) => <>
+        <div key={ index } className="item blank"></div>
     </>;
 
-    const newItem = (output: TerminalItem) => <>
-        <div className="item">
+    const newItem = (
+        output: TerminalItem,
+        index: number,
+    ) => <>
+        <div key={ index } className="item">
             <FontAwesomeIcon
                 className={ itemToCssClass(output) }
                 icon={ itemToIcon(output) }
@@ -71,10 +44,13 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
         </div>
     </>;
 
-    const outputToItem = (output: TerminalItem) =>
+    const outputToItem = (
+        output: TerminalItem,
+        index: number,
+    ) =>
         isItemBlank(output)
-        ? emptyItem
-        : newItem(output);
+        ? emptyItem(index)
+        : newItem(output, index);
 
     return <>
         <div className="terminal-output">
