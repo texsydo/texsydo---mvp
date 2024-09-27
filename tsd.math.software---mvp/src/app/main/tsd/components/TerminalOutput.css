@@ -23,6 +23,10 @@
     color: #4caf50;
 }
 
+.terminal-output > .content .gear-icon {
+    color: #607d8b;
+}
+
 .terminal-output > .content span {
     margin-left: 0.5rem;
 }

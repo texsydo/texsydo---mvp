@@ -3,23 +3,63 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 import "./TerminalOutput.css";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+    faCheck,
+    faGear,
+    IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+type TerminalIcon = "check" | "gear";
+
+const classFromIcon = (icon: TerminalIcon) => ({
+    check: "check-icon",
+    gear: "gear-icon",
+}[icon]);
+
+const faIcon = (icon: TerminalIcon): IconDefinition => ({
+    check: faCheck,
+    gear: faGear,
+}[icon]);
+
+type TerminalItem = string | { icon: TerminalIcon, value: string };
+
+const itemToString = (item: TerminalItem): string =>
+    typeof item === "string"
+    ? item
+    : item.value;
+
+const itemToIcon = (item: TerminalItem): IconDefinition =>
+    typeof item === "string"
+    ? faCheck
+    : faIcon(item.icon);
+
+const itemToCssClass = (item: TerminalItem): string =>
+    typeof item === "string"
+    ? "check-icon"
+    : classFromIcon(item.icon);
+
 interface TerminalOutputProps {
-    outputs: string[];
+    outputs: TerminalItem[];
 }
 
 function TerminalOutput({ outputs }: TerminalOutputProps) {
     const maxLength = 60;
-    const normalize = (output: string) =>
-        output.length > maxLength
-        ? output.substring(0, maxLength) + "..."
-        : output;
+    const normalize = (item: TerminalItem) => {
+        const output = itemToString(item);
 
-    const outputToItem = (output: string) => <>
+        return output.length > maxLength
+               ? output.substring(0, maxLength) + "..."
+               : output;
+    };
+
+    const outputToItem = (output: TerminalItem) => <>
         <div className="item">
-            <FontAwesomeIcon icon={ faCheck }></FontAwesomeIcon>
+            <FontAwesomeIcon
+                className={ itemToCssClass(output) }
+                icon={ itemToIcon(output) }
+            ></FontAwesomeIcon>
+
             <span>{ normalize(output) }</span>
         </div>
     </>;
