@@ -3,9 +3,9 @@
 /* This file is part of https://github.com/texsydo/texsydo---mvp */
 
 .terminal-output {
-    padding: 1rem 0 0 1rem;
+    padding: 1.5rem 0 0 1.5rem;
     margin-bottom: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     background-color: #2b2d30;
     user-select: none;
 }
@@ -28,12 +28,6 @@
 }
 
 @media (min-width: 1080px) {
-    .terminal-output {
-        padding: 1.5rem 0 0 1.5rem;
-        border-radius: 1rem;
-        background-color: #2b2d30;
-    }
-
     .terminal-output > .content {
         font-size: 0.75rem;
         border-bottom-right-radius: 1.5rem;
