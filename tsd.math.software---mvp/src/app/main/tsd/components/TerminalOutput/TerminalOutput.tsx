@@ -3,6 +3,8 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 import "./TerminalOutput.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Fragment } from "react";
 import {
     isItemBlank,
     itemToCssClass,
@@ -10,7 +12,6 @@ import {
     itemToString,
     TerminalItem,
 } from "./TerminalItem.ts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface TerminalOutputProps {
     outputs: TerminalItem[];
@@ -26,15 +27,15 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
                : output;
     };
 
-    const emptyItem = (index: number) => <>
-        <div key={ index } className="item blank"></div>
-    </>;
+    const emptyItem = (index: number) => <Fragment key={ index }>
+        <div className="item blank"></div>
+    </Fragment>;
 
     const newItem = (
         output: TerminalItem,
         index: number,
-    ) => <>
-        <div key={ index } className="item">
+    ) => <Fragment key={ index }>
+        <div className="item">
             <FontAwesomeIcon
                 className={ itemToCssClass(output) }
                 icon={ itemToIcon(output) }
@@ -42,7 +43,7 @@ function TerminalOutput({ outputs }: TerminalOutputProps) {
 
             <span>{ normalize(output) }</span>
         </div>
-    </>;
+    </Fragment>;
 
     const outputToItem = (
         output: TerminalItem,
