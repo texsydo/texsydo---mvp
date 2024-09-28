@@ -5,13 +5,15 @@
 import "./Web.css";
 import webIcon from "@app/assets/texsydo-web.svg";
 import { Heading } from "@app/main/Heading.tsx";
-import TerminalOutput from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
+import TerminalOutput
+    from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ReactNode } from "react";
 import { SubHeading } from "../../Heading.tsx";
 
-interface InlineCodeProps {
-    children: string;
+type InlineCodeProps = {
+    children: ReactNode;
 }
 
 function InlineCode({ children }: InlineCodeProps) {
@@ -22,7 +24,7 @@ function InlineCode({ children }: InlineCodeProps) {
     </>;
 }
 
-interface CommandProps {
+type CommandProps = {
     command: string;
     caption: string;
 }
@@ -53,7 +55,7 @@ function Command({ command, caption }: CommandProps) {
     </>;
 }
 
-interface CommandBlockProps {
+type CommandBlockProps = {
     children: string;
     caption: string;
 }

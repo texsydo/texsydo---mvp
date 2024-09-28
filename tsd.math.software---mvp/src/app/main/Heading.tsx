@@ -4,19 +4,19 @@
 
 import { JSX } from "react";
 
-interface HeadingProps {
+type HeadingProps = {
     id: string;
     title: string;
     icon: string;
 }
 
-interface SubHeadingProps {
+type SubHeadingProps = {
     id: string;
     title: string;
     icon?: string;
 }
 
-interface SubSubHeadingProps {
+type SubSubHeadingProps = {
     id: string;
     title: string;
 }

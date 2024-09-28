@@ -4,6 +4,8 @@
 
 import Header from "@app/main/Header.tsx";
 import "@app/main/Main.css";
+import CanvasPlay from "@app/main/tsd/canvas-play/CanvasPlay.tsx";
+import Fx from "@app/main/tsd/fx/Fx.tsx";
 import Web from "@app/main/tsd/web/Web.tsx";
 
 function Main() {
@@ -18,6 +20,10 @@ function Main() {
                     </section>
 
                     <Web />
+
+                    <Fx />
+
+                    <CanvasPlay />
                 </article>
             </main>
         </section>

@@ -13,7 +13,7 @@ import {
     TerminalItem,
 } from "./TerminalItem.ts";
 
-interface TerminalOutputProps {
+type TerminalOutputProps = {
     outputs: TerminalItem[];
 }
 
