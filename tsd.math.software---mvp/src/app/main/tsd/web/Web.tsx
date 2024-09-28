@@ -69,7 +69,7 @@ function SnippetBlock({ children, caption }: CommandBlockProps) {
                         { children
                             .trim()
                             .split("\n")
-                            .map(line => line.trim())
+                            .map(line => line.trim().replace(/^\|/, " "))
                             .join("\n") }
                     </code>
                 </pre>
@@ -141,12 +141,12 @@ function Web() {
                         { `
                         .
                         ├── mathswe
-                        │   ├── eng
-                        │       ├── automation
-                        │           └── platform
-                        │               └── ops
-                        │                   └── automating-the-platform-operations-and-beyond-2023-08-31
-                        │                       └── index.md
+                        |   ├── eng
+                        |       ├── automation
+                        |           └── platform
+                        |               └── ops
+                        |                   └── automating-the-platform-operations-and-beyond-2023-08-31
+                        |                       └── index.md
                         ` }
                     </SnippetBlock>
                 </div>
