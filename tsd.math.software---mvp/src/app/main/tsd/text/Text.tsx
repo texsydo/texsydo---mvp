@@ -3,7 +3,7 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 import "./Text.css";
-import webIcon from "@app/assets/texsydo-web.svg";
+import textIcon from "@app/assets/text.svg";
 import { Heading } from "@app/main/Heading.tsx";
 
 function Text() {
@@ -13,10 +13,8 @@ function Text() {
                 <Heading
                     id="text"
                     title="Text"
-                    icon={ webIcon }
+                    icon={ textIcon }
                 ></Heading>
-
-                <p>Textual Engineering</p>
             </div>
         </section>
     </>;
