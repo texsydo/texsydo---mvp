@@ -310,7 +310,7 @@ function Web() {
                         gh-pages one.
                     </p>
 
-                    <SubSubHeading
+                    <SubHeading
                         id="domain-dictionary"
                         title="Domain Dictionary"
                     />
