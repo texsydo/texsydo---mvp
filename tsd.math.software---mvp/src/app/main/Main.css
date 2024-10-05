@@ -39,7 +39,7 @@ header + p,
 }
 
 .subheading + p {
-    font-size: calc(1.3rem + .6vw);
+    font-size: 1.5rem;
 }
 
 h2 {
