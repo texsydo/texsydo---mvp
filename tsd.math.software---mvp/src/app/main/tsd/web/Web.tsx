@@ -388,6 +388,134 @@ function Web() {
                             />
                         </li>
                     </ul>
+
+                    <SubHeading
+                        id="pr-and-release-workflow"
+                        title="PR and Release Workflow"
+                    />
+
+                    <p>
+                        Clear and Complete Development Communication
+                    </p>
+
+                    <p>
+                        Texsydo Web infers development workflow to automate
+                        updates of PR and Release blogs, currently only
+                        available for MathSwe projects.
+                    </p>
+
+                    <Command
+                        command="tsd-web add-pr { entry-id } { class_1,class_2,...,class_n } { path } { from-pr }"
+                        caption="Add-PR Command"
+                    />
+
+                    <p>
+                        It uses the syntax of
+                        the <InlineCode>create</InlineCode> command
+                        plus <InlineCode>path</InlineCode> and <InlineCode>from-pr</InlineCode> arguments.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <InlineCode>path</InlineCode> <span>
+                                is the GitHub repository path, like
+                            </span>
+                            <InlineCode>org/repo</InlineCode>.
+                        </li>
+                        <li>
+                            <InlineCode>from-pr</InlineCode> <span>
+                            is the first PR number to take (inclusive), and the
+                            program will fetch the rest of the PRs until the
+                            last one. This option doesn’t provide more
+                            flexibility yet.
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div className="text-center mb-4">
+                        <SnippetBlock caption="Add PR Example">
+                            { `
+                            tsd-web add-pr \\
+                            initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21 \\
+                            mathswe, legal, cookies, pr \\
+                            mathswe/legal \\
+                            1
+                            ` }
+                        </SnippetBlock>
+                    </div>
+
+                    <p>
+                        The <InlineCode>pr</InlineCode> class must be the direct
+                        parent directory of the article to enable inference, as
+                        shown above.
+                    </p>
+
+                    <TerminalOutput
+                        outputs={ [
+                            { icon: "gear", value: "Creating Article" },
+
+                            "Checkout to branch main",
+                            "Update branch main",
+                            "Checkout to branch initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21",
+                            "Add files to Git",
+                            "Commit files to Git",
+                            "Create entry \"Initializing Ops with a Cookie"
+                            + " Banner | Mathswe Com (2024/03/21)\"",
+                            "",
+                            { icon: "gear", value: "Fetching PRs" },
+                            "Fetch GitHub PRs",
+                            "Add root files to Git",
+                            "Commit PR content",
+                            "Add GitHub PRs from #1 to #11",
+                        ] }
+                    />
+
+                    <p>
+                        It creates the article in the <InlineCode>
+                        mathswe/legal/cookies/pr
+                    </InlineCode> directory. It adds the PRs from GitHub with
+                        proper styles. It requires developers to <strong>
+                        maintain balanced communication on GitHub</strong> to
+                        move forward continuously in a linear direction.
+                    </p>
+
+                    <p>
+                        The remaining { `developer's` } job is to <strong>
+                        finish the article with the conclusion and
+                        abstract sections</strong> and add <strong>
+                        the cover textual file. </strong>Texsydo will <i>
+                        build it into a PNG image</i> according to MathSwe
+                        graphical standards.
+                    </p>
+
+                    <p>
+                        A Markdown source file defines the cover image
+                        with the same name as the article
+                        and <InlineCode>.png.md</InlineCode> extension. It must
+                        contain a tiny abstract with an optional list. It
+                        supports bold style.
+                    </p>
+
+                    <TerminalOutput
+                        outputs={ [
+                            { icon: "gear", value: "Building" },
+                            "Generate cover image",
+                            "Build article initializing-ops-with-a-cookie-banner---mathswe-com-2024-03-21",
+                        ] }
+                    />
+
+                    <p>
+                        While support for PR articles is wider, current support
+                        for Release articles is limited to generating the cover
+                        image.
+                    </p>
+
+                    <p>
+                        Texsydo Web enables efficient and thoroughly formal
+                        written communication from low-level technical details
+                        to high-level product engineering as per MathSwe
+                        standards.
+                    </p>
                 </div>
             </div>
         </section>
