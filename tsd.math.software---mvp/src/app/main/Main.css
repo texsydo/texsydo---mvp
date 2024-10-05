@@ -38,6 +38,10 @@ header + p,
     text-align: center;
 }
 
+.subheading + p {
+    font-size: calc(1.3rem + .6vw);
+}
+
 h2 {
     font-size: 1.8em;
     margin-bottom: 10px;
