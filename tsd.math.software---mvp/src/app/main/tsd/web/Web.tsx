@@ -90,12 +90,12 @@ function Command({ command, caption }: CommandProps) {
     </>;
 }
 
-type CommandBlockProps = {
+type SnippetBlockProps = {
     children: string;
     caption: string;
 }
 
-function SnippetBlock({ children, caption }: CommandBlockProps) {
+function SnippetBlock({ children, caption }: SnippetBlockProps) {
     return <>
         <figure className="snippet-block compact">
             <div>
