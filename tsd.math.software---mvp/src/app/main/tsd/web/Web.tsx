@@ -6,9 +6,9 @@ import "./Web.css";
 import webIcon from "@app/assets/texsydo-web.svg";
 import { Heading, SubSubHeading } from "@app/main/Heading.tsx";
 import SnippetBlock
-    from "@app/main/tsd/components/SnippetBlock/SnippetBlock.tsx";
+    from "@app/main/tsd/components/Code/SnippetBlock.tsx";
 import InlineCode
-    from "@app/main/tsd/components/InlineCode/InlineCode.tsx";
+    from "@app/main/tsd/components/Code/InlineCode.tsx";
 import TerminalOutput
     from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
