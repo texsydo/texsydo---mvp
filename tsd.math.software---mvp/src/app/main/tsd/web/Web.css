@@ -34,16 +34,6 @@ section.web::after {
     background-color: var(--web-section-color-100);
 }
 
-.snippet-block.compact code {
-    font-size: 0.6875rem;
-}
-
-@media (min-width: 1080px) {
-    .snippet-block.compact code {
-        font-size: 0.75rem;
-    }
-}
-
 .word-map-container {
     display: grid;
     grid-template-columns: auto auto 1fr;
@@ -71,4 +61,3 @@ section.web::after {
     flex: 1 1 45%;
     min-width: 200px;
 }
-

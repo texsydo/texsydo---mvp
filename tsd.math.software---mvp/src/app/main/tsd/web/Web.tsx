@@ -5,6 +5,8 @@
 import "./Web.css";
 import webIcon from "@app/assets/texsydo-web.svg";
 import { Heading, SubSubHeading } from "@app/main/Heading.tsx";
+import SnippetBlock
+    from "@app/main/tsd/components/SnippetBlock/SnippetBlock.tsx";
 import TerminalOutput
     from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
@@ -83,31 +85,6 @@ function Command({ command, caption }: CommandProps) {
                     />
                     { command }
                 </code>
-            </div>
-
-            <figcaption>{ caption }</figcaption>
-        </figure>
-    </>;
-}
-
-type SnippetBlockProps = {
-    children: string;
-    caption: string;
-}
-
-function SnippetBlock({ children, caption }: SnippetBlockProps) {
-    return <>
-        <figure className="snippet-block compact">
-            <div>
-                <pre>
-                    <code className="d-block language-plaintext highlighter-rouge">
-                        { children
-                            .trim()
-                            .split("\n")
-                            .map(line => line.trim().replace(/^\|/, " "))
-                            .join("\n") }
-                    </code>
-                </pre>
             </div>
 
             <figcaption>{ caption }</figcaption>
