@@ -7,29 +7,15 @@ import webIcon from "@app/assets/texsydo-web.svg";
 import { Heading, SubSubHeading } from "@app/main/Heading.tsx";
 import SnippetBlock
     from "@app/main/tsd/components/SnippetBlock/SnippetBlock.tsx";
+import InlineCode
+    from "@app/main/tsd/components/InlineCode/InlineCode.tsx";
 import TerminalOutput
     from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MathJax } from "better-react-mathjax";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { SubHeading } from "../../Heading.tsx";
-
-type InlineCodeProps = {
-    children: ReactNode;
-    backgroundColor?: string;
-}
-
-function InlineCode({ children, backgroundColor }: InlineCodeProps) {
-    return <>
-        <code
-            className="code language-plaintext highlighter-rouge"
-            style={ { backgroundColor } }
-        >
-            { children }
-        </code>
-    </>;
-}
 
 type InlineCodeMapProps = {
     maps: Record<string, string>
