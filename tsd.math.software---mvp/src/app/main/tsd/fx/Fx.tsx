@@ -51,7 +51,7 @@ function Fx() {
                     <p>
                         Texsydo FX currently supports generating cover images
                         for blogs that update on Pull Requests (PRs) and project
-                        releases for MathSwe projects.
+                        releases in MathSwe.
                     </p>
 
                     <SnippetBlock caption="Generating a PR Cover Image">
@@ -146,7 +146,7 @@ function Fx() {
                         besides the version of the whole repository.
                         Standalone projects of a common repository, like <b>
                         microservices and MVPs, integrate smoothly</b> with their
-                        interdependent version.
+                        independent version.
                     </p>
 
                     <p>
