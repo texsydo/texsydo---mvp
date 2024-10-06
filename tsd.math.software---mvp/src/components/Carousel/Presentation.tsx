@@ -32,11 +32,6 @@ type PresentationProps = {
 
 function Presentation({ id, title, sequence }: PresentationProps) {
     const [ classes, setClasses ] = useState([ "carousel slide" ]);
-    // const [ index, setIndex ] = useState(0);
-    //
-    // const handleSelect = (selectedIndex: number) => {
-    //     setIndex(selectedIndex);
-    // };
 
     const onZoom = () => {
         if (classes.includes("zoom-in")) {

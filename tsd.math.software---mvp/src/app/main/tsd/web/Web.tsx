@@ -6,11 +6,11 @@ import "./Web.css";
 import webIcon from "@app/assets/texsydo-web.svg";
 import { Heading, SubSubHeading } from "@app/main/Heading.tsx";
 import SnippetBlock
-    from "@app/main/tsd/components/Code/SnippetBlock.tsx";
+    from "@components/Code/SnippetBlock.tsx";
 import InlineCode
-    from "@app/main/tsd/components/Code/InlineCode.tsx";
+    from "@components/Code/InlineCode.tsx";
 import TerminalOutput
-    from "@app/main/tsd/components/TerminalOutput/TerminalOutput.tsx";
+    from "@components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MathJax } from "better-react-mathjax";
