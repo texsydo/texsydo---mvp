@@ -60,7 +60,21 @@ section > .bg {
     height: 100%;
 }
 
+@media (min-width: 900px) {
+    main section > .wrap,
+    main section > .bg > .wrap {
+        margin: 0 10vw;
+    }
+}
+
 @media (min-width: 1200px) {
+    main section > .wrap,
+    main section > .bg > .wrap {
+        margin: 0 20vw;
+    }
+}
+
+@media (min-width: 1600px) {
     main section > .wrap,
     main section > .bg > .wrap {
         margin: 0 30vw;
