@@ -4,11 +4,11 @@
 
 import "@app/App.css";
 import Footer from "@app/Footer.tsx";
-import Main from "@app/main/Main.tsx";
+import Texsydo from "@app/main/Texsydo.tsx";
 
 function App() {
     return <>
-        <Main></Main>
+        <Texsydo></Texsydo>
 
         <Footer></Footer>
     </>;
