@@ -2,27 +2,39 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
-import { PropsWithChildren } from "react";
+import "./Section.css"
+import { Wrap } from "@components/Article/Section/Wrap.tsx";
+import { PropsWithChildren, ReactNode } from "react";
 
-type Wrap = "wrap" | "none"
+type Wrapping = "wrap" | "none"
 
 type SectionProps = PropsWithChildren & {
     className: string,
-    wrap?: Wrap,
+    bg?: boolean,
+    wrap?: Wrapping,
 }
 
-export const Section = ({ children, className, wrap }: SectionProps) => {
-    const wrapped = () => <>
-        <div className="wrap">
-            { children }
-        </div>
-    </>;
+export const Section = ({ children, className, bg, wrap }: SectionProps) => {
+    const withWrap = () => <Wrap>{ children }</Wrap>;
 
     const noWrap = () => <>{ children }</>;
 
+    const withBackground = (bgChildren: ReactNode) => <>
+        <div className="bg">
+            { bgChildren }
+        </div>
+    </>;
+
+    const applyWrap = wrap === "none" ? noWrap() : withWrap();
+
+    const sectionChildren
+        = bg === true
+          ? withBackground(applyWrap)
+          : applyWrap;
+
     return <>
         <section className={ className }>
-            { wrap === "none" ? noWrap() : wrapped() }
+            { sectionChildren }
         </section>
     </>;
 };
