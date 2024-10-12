@@ -4,7 +4,7 @@
 
 import "./Text.css";
 import textIcon from "@app/assets/text.svg";
-import { Heading } from "@app/main/Heading.tsx";
+import { Heading } from "@components/Article/Heading/Heading.tsx";
 
 function Text() {
     return <>
@@ -13,7 +13,7 @@ function Text() {
                 <Heading
                     id="text"
                     title="Text"
-                    icon={ textIcon }
+                    icon={ { src: textIcon, name: "Text" } }
                 ></Heading>
 
                 <p>Mathematical Documentation</p>

@@ -4,21 +4,26 @@
 
 import { JSX } from "react";
 
+export type Icon = {
+    src: string,
+    name: string,
+}
+
 type HeadingProps = {
-    id: string;
-    title: string;
-    icon: string;
+    id: string,
+    title: string,
+    icon: Icon,
 }
 
 type SubHeadingProps = {
-    id: string;
-    title: string;
-    icon?: string;
+    id: string,
+    title: string,
+    icon?: Icon,
 }
 
 type SubSubHeadingProps = {
-    id: string;
-    title: string;
+    id: string,
+    title: string,
 }
 
 function getHeadingClass(heading: JSX.Element) {
@@ -32,7 +37,7 @@ function getHeadingClass(heading: JSX.Element) {
     }
 }
 
-function HeadingCard(heading: JSX.Element, id: string, icon?: string) {
+function HeadingCard(heading: JSX.Element, id: string, icon?: Icon) {
     const hClass = getHeadingClass(heading);
     const classes = `navbar-brand nav-link flex-fill p-0 ${ hClass }`;
 
@@ -44,8 +49,8 @@ function HeadingCard(heading: JSX.Element, id: string, icon?: string) {
             { heading }
             { icon !== undefined &&
               <img
-                  src={ icon }
-                  alt="Math Software"
+                  src={ icon.src }
+                  alt={ icon.name }
                   className="nav-icon"
               /> }
         </a>

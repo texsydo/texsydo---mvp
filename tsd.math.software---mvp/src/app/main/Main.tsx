@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
-import Header from "@app/main/Header.tsx";
-import "@app/main/Main.css";
 import CanvasPlay from "@app/main/tsd/canvas-play/CanvasPlay.tsx";
 import Fx from "@app/main/tsd/fx/Fx.tsx";
 import Text from "@app/main/tsd/text/Text.tsx";
 import Web from "@app/main/tsd/web/Web.tsx";
+import Header from "@components/Article/Heading/Header.tsx";
+import "@app/main/Main.css";
 
 function Main() {
     return <>
@@ -15,7 +15,13 @@ function Main() {
             <main>
                 <article>
                     <section id="tsd">
-                        <Header></Header>
+                        <Header
+                            appName="Texsydo"
+                            icon={ {
+                                src: "/texsydo.svg",
+                                name: "Texsydo",
+                            } }
+                        ></Header>
 
                         <p>Textual System Documenting</p>
                     </section>

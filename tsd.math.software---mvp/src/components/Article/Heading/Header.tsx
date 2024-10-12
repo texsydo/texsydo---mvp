@@ -2,10 +2,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
-import "@app/main/Header.css";
+import "./Header.css";
+import { Icon } from "@components/Article/Heading/Heading.tsx";
 import { useEffect, useState } from "react";
 
-function Header() {
+type HeaderProps = {
+    appName: string,
+    icon: Icon,
+}
+
+function Header({ appName, icon }: HeaderProps) {
     const [ navHideMode, setNavHideMode ] = useState<string>("");
     const [ lastScrollTop, setLastScrollTop ] = useState<number>(0);
 
@@ -49,10 +55,10 @@ function Header() {
                             className="navbar-brand nav-link d-flex flex-fill p-0"
                             href="/"
                         >
-                            <h1>Texsydo</h1>
+                            <h1>{ appName }</h1>
                             <img
-                                src="/texsydo.svg"
-                                alt="Texsydo"
+                                src={ icon.src }
+                                alt={ icon.name }
                                 className="nav-icon"
                             />
                         </a>

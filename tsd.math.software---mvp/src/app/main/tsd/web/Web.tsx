@@ -4,7 +4,11 @@
 
 import "./Web.css";
 import webIcon from "@app/assets/texsydo-web.svg";
-import { Heading, SubSubHeading } from "@app/main/Heading.tsx";
+import {
+    Heading,
+    SubHeading,
+    SubSubHeading,
+} from "@components/Article/Heading/Heading.tsx";
 import InlineCode from "@components/Code/InlineCode.tsx";
 import SnippetBlock from "@components/Code/SnippetBlock.tsx";
 import TerminalOutput from "@components/TerminalOutput/TerminalOutput.tsx";
@@ -12,7 +16,6 @@ import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MathJax } from "better-react-mathjax";
 import { Fragment } from "react";
-import { SubHeading } from "../../Heading.tsx";
 
 type InlineCodeMapProps = {
     maps: Record<string, string>
@@ -83,7 +86,7 @@ function Web() {
                     <Heading
                         id="web"
                         title="Web"
-                        icon={ webIcon }
+                        icon={ { src: webIcon, name: "Web" } }
                     ></Heading>
 
                     <p>Mathematical Text to Web Article</p>
