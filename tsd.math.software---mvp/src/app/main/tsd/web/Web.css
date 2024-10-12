@@ -1,0 +1,63 @@
+/* Copyright (c) 2024 Tobias Briones. All rights reserved. */
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* This file is part of https://github.com/texsydo/texsydo---mvp */
+
+:root {
+    --web-section-color-100: #cfd8dc;
+    --web-section-dark-200: #b0bec5;
+}
+
+section.web {
+    background-color: var(--web-section-color-100);
+}
+
+section.web > .bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--web-section-color-100) 0%, var(--web-section-dark-200) 50%, var(--web-section-color-100) 100%);
+}
+
+section.web::before {
+    /* the linear gradient is a fallback because sometimes when resizing (firefox ubuntu, at least) the bg shows blank space to the left and right */
+
+    background: url("../../../assets/section-web-top-bg.svg") no-repeat center,
+    linear-gradient(to right, var(--web-section-color-100) 0%, var(--web-section-color-100) 100%) no-repeat left,
+    linear-gradient(to left, var(--text-section-color-100) 0%, var(--text-section-color-100) 100%) no-repeat right;
+
+    background-size: 100%, 0.5rem, 0.5rem;
+
+    /* the border top fixes a thin line between the previous section and this, sometimes with different window sizes */
+    border-top: 2px solid var(--text-section-color-100);
+}
+
+section.web::after {
+    background-color: var(--web-section-color-100);
+}
+
+.word-map-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+}
+
+.flex-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.flex-list > li {
+    display: flex;
+    align-items: center;
+    flex: 1 1 45%;
+    min-width: 200px;
+}
