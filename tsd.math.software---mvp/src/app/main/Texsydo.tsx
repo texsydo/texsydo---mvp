@@ -7,7 +7,6 @@ import Fx from "@app/main/tsd/fx/Fx.tsx";
 import Text from "@app/main/tsd/text/Text.tsx";
 import Web from "@app/main/tsd/web/Web.tsx";
 import Header from "@components/Article/Heading/Header.tsx";
-import "./Texsydo.css";
 import Main from "@components/Article/Main/Main.tsx";
 
 function Texsydo() {
