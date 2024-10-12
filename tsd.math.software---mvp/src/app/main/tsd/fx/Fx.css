@@ -33,3 +33,43 @@ section.fx::before {
 section.fx::after {
     background-color: var(--fx-section-color-100);
 }
+
+.images {
+    margin: 2rem var(--content-padding);
+}
+
+.images > .row figure {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+@media (min-width: 800px) {
+    .wrap-graphics {
+        margin: 0 var(--content-padding);
+    }
+
+    .images {
+         margin: 2rem 8rem;
+     }
+}
+
+@media (min-width: 1080px) {
+    .wrap-graphics {
+        margin: 0 10vw;
+    }
+
+    .images {
+        margin: 2rem var(--content-padding);
+    }
+
+    .images > .row figure {
+        width: 50%;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 1600px) {
+    .wrap-graphics {
+        margin: 0 20vw;
+    }
+}
