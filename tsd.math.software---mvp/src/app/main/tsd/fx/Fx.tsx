@@ -21,7 +21,7 @@ import prCoverWithCustomColor from "@app/assets/pr-cover-with-custom-color.png";
 import releaseCoverInMathSweLegal
     from "@app/assets/release-cover-in-mathswe-legal.png";
 import fxIcon from "@app/assets/texsydo-fx.png";
-import { Heading, SubHeading } from "@app/main/Heading.tsx";
+import { Heading, SubHeading } from "@components/Article/Heading/Heading.tsx";
 
 function Fx() {
     return <>
@@ -31,7 +31,7 @@ function Fx() {
                     <Heading
                         id="fx"
                         title="FX"
-                        icon={ fxIcon }
+                        icon={ { src: fxIcon, name: "FX" } }
                     ></Heading>
 
                     <p>Text Effects</p>
