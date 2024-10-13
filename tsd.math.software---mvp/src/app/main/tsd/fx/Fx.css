@@ -1,0 +1,75 @@
+/* Copyright (c) 2024 Tobias Briones. All rights reserved. */
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* This file is part of https://github.com/texsydo/texsydo---mvp */
+
+:root {
+    --fx-section-color-100: #BBDEFB;
+    --fx-section-dark-200: #81d4fa;
+}
+
+section.fx {
+    background-color: var(--fx-section-color-100);
+}
+
+section.fx > .bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--fx-section-color-100) 0%, var(--fx-section-dark-200) 50%, var(--fx-section-color-100) 100%);
+}
+
+section.fx::before {
+    /* the linear gradient is a fallback because sometimes when resizing (firefox ubuntu, at least) the bg shows blank space to the left and right */
+
+    background: url("../../../assets/section-fx-top-bg.svg") no-repeat center,
+    linear-gradient(to right, var(--fx-section-color-100) 0%, var(--fx-section-color-100) 100%) no-repeat left,
+    linear-gradient(to left, var(--web-section-color-100) 0%, var(--web-section-color-100) 100%) no-repeat right;
+
+    background-size: 100%, 0.5rem, 0.5rem;
+
+    /* the border top fixes a thin line between the previous section and this, sometimes with different window sizes */
+    border-top: 2px solid var(--web-section-color-100);
+}
+
+section.fx::after {
+    background-color: var(--fx-section-color-100);
+}
+
+.images {
+    margin: 2rem var(--content-padding);
+}
+
+.images > .row figure {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+@media (min-width: 800px) {
+    .wrap-graphics {
+        margin: 0 var(--content-padding);
+    }
+
+    .images {
+         margin: 2rem 8rem;
+     }
+}
+
+@media (min-width: 1080px) {
+    .wrap-graphics {
+        margin: 0 10vw;
+    }
+
+    .images {
+        margin: 2rem var(--content-padding);
+    }
+
+    .images > .row figure {
+        width: 50%;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 1600px) {
+    .wrap-graphics {
+        margin: 0 20vw;
+    }
+}

@@ -1,0 +1,12 @@
+/* Copyright (c) 2024 Tobias Briones. All rights reserved. */
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* This file is part of https://github.com/texsydo/texsydo---mvp */
+
+:root {
+    --text-section-color-100: #f5f5f5;
+    --text-section-dark-200: #eeeeee;
+}
+
+section.text {
+    background: linear-gradient(to bottom, var(--text-section-color-100) 0%, var(--text-section-dark-200) 50%, var(--text-section-color-100) 100%);
+}
