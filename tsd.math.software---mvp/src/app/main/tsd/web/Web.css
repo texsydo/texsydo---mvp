@@ -61,3 +61,24 @@ section.web::after {
     flex: 1 1 45%;
     min-width: 200px;
 }
+
+
+.images {
+    margin: 2rem var(--content-padding);
+}
+
+.images > .row figure {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+@media (min-width: 1080px) {
+    .images {
+        margin: 2rem var(--content-padding);
+    }
+
+    .images > .row figure {
+        width: 50%;
+        margin: 1rem auto;
+    }
+}

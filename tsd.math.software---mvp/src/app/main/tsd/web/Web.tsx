@@ -3,6 +3,9 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 import "./Web.css";
+import epNav from "@app/assets/section/web/article-ep-navigation.png";
+import epWebApp from "@app/assets/section/web/article-ep-web-app.png";
+import epSourceNav from "@app/assets/section/web/ep-source-code-navigation.png";
 import webIcon from "@app/assets/texsydo-web.svg";
 import {
     Heading,
@@ -13,6 +16,7 @@ import { Section } from "@components/Article/Section/Section.tsx";
 import { Wrap } from "@components/Article/Section/Wrap.tsx";
 import InlineCode from "@components/Code/InlineCode.tsx";
 import SnippetBlock from "@components/Code/SnippetBlock.tsx";
+import { ImageFigure } from "@components/Figure/ImageFigure.tsx";
 import TerminalOutput from "@components/TerminalOutput/TerminalOutput.tsx";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -351,6 +355,114 @@ function Web() {
                         />
                     </li>
                 </ul>
+            </Wrap>
+
+            <Wrap>
+                <SubHeading
+                    id="in--article-projects"
+                    title="In-Article Projects"
+                />
+
+                <p>
+                    Example Project Associated with an Article
+                </p>
+
+                <p>
+                    Technical articles can contain an associated project
+                    offering complete source code to readers, while
+                    standard articles can still provide files. Everything
+                    is first-class, with cohesive navigation without leaving the
+                    website.
+                </p>
+
+                <p>
+                    In-article projects
+                    are <strong>Example Projects (EPs)</strong> since the
+                    article bounds them to that scope. The unique EP benefits
+                    can thus enhance the value a technical article provides.
+                </p>
+
+                <p>
+                    If the article contains a web app project, Texsydo Web will
+                    also build and deploy it within the article.
+                </p>
+
+                <SnippetBlock caption="Article with EP">
+                    { `
+                        |📂 drawing-a-tree-on-canvas-with-xy-coordinates
+                        |   ├── index.md
+                        |   ├── 📂 mrm-solution-tree---ep
+                        |   │      ├── other-project-files...
+                        |   │      ├── package.json
+                        |   │      ├── package-lock.json
+                        |   │      ├── README.md
+                        |   │      ├── 📂 src
+                        |   │      │      ├── index.html
+                        |   │      │      └── other-project-sources...
+                        |   │      ├── tsconfig.json
+                        |   │      └── webpack.config.js
+                        |   └── other-article-files...
+                    ` }
+                </SnippetBlock>
+
+                <Command
+                    command="tsd-web build drawing-a-tree-on-canvas-with-xy-coordinates jekyll"
+                    caption="Building an Article"
+                />
+
+                <TerminalOutput
+                    outputs={ [
+                        { icon: "gear", value: "Building EP" },
+                        "Install node_modules",
+                        "Build mrm-solution-tree---ep",
+                        "",
+                        { icon: "gear", value: "Building Article" },
+                        "Build drawing-a-tree-on-canvas-with-xy-coordinates",
+                        "Build Jekyll site",
+                    ] }
+                />
+
+            </Wrap>
+
+            <div className="images">
+                <div className="row">
+                    <ImageFigure
+                        src={ epNav }
+                        caption="Article EP Navigation"
+                    />
+
+                    <ImageFigure
+                        src={ epSourceNav }
+                        caption="EP Source Code Navigation"
+                    />
+                </div>
+
+                <div className="row">
+                    <ImageFigure
+                        src={ epWebApp }
+                        caption="Article EP Web App"
+                    />
+                </div>
+            </div>
+
+            <Wrap>
+                <p>
+                    <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates"
+                    >
+                        Drawing a Tree on Canvas with XY Coordinates
+                    </a>
+                </p>
+
+                <p>
+                    Advanced additions like associated files, example project
+                    source code, and web apps enhance articles by growing them
+                    cohesively. Texsydo Web allows articles to specify their DSL
+                    enabling completeness from the academic text to the
+                    engineering specification.
+                </p>
             </Wrap>
 
             <Wrap>
