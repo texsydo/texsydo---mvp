@@ -308,6 +308,12 @@ figure > img {
     border-bottom: none;
 }
 
+figure code {
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    border-bottom: none !important;
+}
+
 code > span {
     font-family: "JetBrains Mono", monospace;
 }
