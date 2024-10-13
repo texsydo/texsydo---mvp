@@ -112,7 +112,10 @@ function Web() {
 
                 <p>
                     ⚠️ Texsydo Web is a challenging project, so its current
-                    MVP versions do not guarantee API stability for now.
+                    MVP versions do not guarantee API stability for now. Texsydo
+                    Web <InlineCode>tsd-web</InlineCode> CLI is currently in the
+                    prototype stage without public availability until its
+                    ongoing migration to MVP finishes.
                 </p>
 
                 <SubSubHeading id="new-article" title="New Article" />

@@ -60,6 +60,12 @@ function Fx() {
                     releases in MathSwe.
                 </p>
 
+                <p>
+                    ⚠️ Texsydo FX <InlineCode>tsd-fx</InlineCode> CLI is
+                    currently in the prototype stage without public availability
+                    until its ongoing migration to MVP finishes.
+                </p>
+
                 <SnippetBlock caption="Generating a PR Cover Image">
                     { `
                         tsd-fx pr-cover preview \\
