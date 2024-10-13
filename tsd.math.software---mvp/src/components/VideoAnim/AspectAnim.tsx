@@ -8,7 +8,7 @@ import { Fragment } from "react";
 
 type AspectRatio = "a1-1" | "a9-16"
 
-type MaxHeight = "max-100vh" | "max-80vh"
+type MaxHeight = "max-100vh" | "max-80vh-when-not-full-width"
 
 type AspectAnimProps = {
     sources: string[],

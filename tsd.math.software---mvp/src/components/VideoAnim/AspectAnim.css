@@ -15,11 +15,6 @@
     height: 100%;
 }
 
-.aspect.max-80vh {
-    width: auto;
-    max-height: 80vh;
-}
-
 .a1-1 {
     aspect-ratio: 1;
 }
@@ -36,6 +31,10 @@
         width: auto;
         height: 100vh;
     }
+
+    .a1-1.max-80vh-when-not-full-width {
+        max-height: 80vh;
+    }
 }
 
 /* Screens taller than 9:16 [0 - 9/16] */
@@ -47,6 +46,11 @@
 @media (min-aspect-ratio: 9/16) {
     .a9-16 {
         width: calc(100vh * (9 / 16));
+    }
+
+    .a9-16.max-80vh-when-not-full-width {
+        width: auto;
+        max-height: 80vh;
     }
 }
 
