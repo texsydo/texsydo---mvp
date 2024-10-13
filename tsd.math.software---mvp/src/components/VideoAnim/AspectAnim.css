@@ -32,3 +32,28 @@
         height: 100vh;
     }
 }
+
+/* Screens taller than 9:16 [0 - 9/16] */
+.a9-16 {
+    aspect-ratio: 9/16;
+}
+
+/* Screens wider than 9:16 [9/16 - inf) */
+@media (min-aspect-ratio: 9/16) {
+    .a9-16 {
+        width: calc(100vh * (9 / 16));
+    }
+}
+
+/* Screens wider than 18:16 [18/16 - inf) (2 * 9/16) */
+@media (min-aspect-ratio: 18/16) {
+    .aspects:has(.a9-16) {
+        display: flex;
+        gap: 4rem;
+        justify-content: center;
+    }
+
+    .aspects > .a9-16 {
+        margin: 2rem 0;
+    }
+}

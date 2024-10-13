@@ -14,15 +14,15 @@ type AspectAnimProps = {
 }
 
 function AspectAnim({ sources, ratio }: AspectAnimProps) {
-    const video = (src: string, idx: number) => <Fragment key={ idx }>
-        <div className="item">
+    const aspect = (src: string, idx: number) => <Fragment key={ idx }>
+        <div className={ `aspect ${ ratio }` }>
             <AutoVideo src={ src } />
         </div>
     </Fragment>;
 
     return <>
-        <div className={ `aspect ${ ratio }` }>
-            { sources.map(video) }
+        <div className="aspects">
+            { sources.map(aspect) }
         </div>
     </>;
 }
