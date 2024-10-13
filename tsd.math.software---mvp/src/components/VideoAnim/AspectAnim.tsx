@@ -6,23 +6,28 @@ import "./AspectAnim.css";
 import AutoVideo from "@components/VideoAnim/AutoVideo.tsx";
 import { Fragment } from "react";
 
-type AspectRation = "a1-1" | "a9-16"
+type AspectRatio = "a1-1" | "a9-16"
+
+type MaxHeight = "max-100vh" | "max-80vh-when-not-full-width"
 
 type AspectAnimProps = {
     sources: string[],
-    ratio: AspectRation
+    ratio: AspectRatio,
+    maxHeight?: MaxHeight,
 }
 
-function AspectAnim({ sources, ratio }: AspectAnimProps) {
-    const video = (src: string, idx: number) => <Fragment key={ idx }>
-        <div className="item">
+function AspectAnim({ sources, ratio, maxHeight }: AspectAnimProps) {
+    const maxHeightClass = maxHeight ?? "max-100vh";
+
+    const aspect = (src: string, idx: number) => <Fragment key={ idx }>
+        <div className={ `aspect ${ ratio } ${ maxHeightClass }` }>
             <AutoVideo src={ src } />
         </div>
     </Fragment>;
 
     return <>
-        <div className={ `aspect ${ ratio }` }>
-            { sources.map(video) }
+        <div className="aspects">
+            { sources.map(aspect) }
         </div>
     </>;
 }
