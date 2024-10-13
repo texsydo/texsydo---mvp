@@ -15,6 +15,11 @@
     height: 100%;
 }
 
+.aspect.max-80vh {
+    width: auto;
+    max-height: 80vh;
+}
+
 .a1-1 {
     aspect-ratio: 1;
 }
