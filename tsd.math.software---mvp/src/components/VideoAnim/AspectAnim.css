@@ -37,6 +37,18 @@
     }
 }
 
+@media (min-aspect-ratio: 128/75) {
+    .aspects:has(.a1-1) {
+        display: flex;
+        gap: 4rem;
+        justify-content: center;
+    }
+
+    .aspects > .a1-1 {
+        margin: 2rem 0;
+    }
+}
+
 /* Screens taller than 9:16 [0 - 9/16] */
 .a9-16 {
     aspect-ratio: 9/16;
