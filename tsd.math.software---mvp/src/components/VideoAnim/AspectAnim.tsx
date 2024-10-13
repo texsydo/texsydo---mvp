@@ -6,11 +6,11 @@ import "./AspectAnim.css";
 import AutoVideo from "@components/VideoAnim/AutoVideo.tsx";
 import { Fragment } from "react";
 
-type AspectRation = "a1-1" | "a9-16"
+type AspectRatio = "a1-1" | "a9-16"
 
 type AspectAnimProps = {
     sources: string[],
-    ratio: AspectRation
+    ratio: AspectRatio,
 }
 
 function AspectAnim({ sources, ratio }: AspectAnimProps) {
