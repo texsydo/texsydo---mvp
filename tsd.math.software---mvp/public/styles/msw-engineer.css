@@ -304,6 +304,10 @@ figure:has(img) > figcaption {
     border-radius: 0 0 1rem 1rem;
 }
 
+figure > img {
+    border-bottom: none;
+}
+
 code > span {
     font-family: "JetBrains Mono", monospace;
 }
