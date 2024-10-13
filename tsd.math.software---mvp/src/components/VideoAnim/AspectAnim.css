@@ -21,7 +21,7 @@
 
 @media (aspect-ratio: 1) or (orientation: portrait) {
     .a1-1 {
-        width: 100%;
+        width: 100vw;
         height: auto;
     }
 }
@@ -29,6 +29,6 @@
 @media (orientation: landscape) {
     .a1-1 {
         width: auto;
-        height: 100%;
+        height: 100vh;
     }
 }
