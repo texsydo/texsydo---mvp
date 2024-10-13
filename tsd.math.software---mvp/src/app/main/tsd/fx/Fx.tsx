@@ -24,6 +24,7 @@ import fxIcon from "@app/assets/texsydo-fx.png";
 import { Heading, SubHeading } from "@components/Article/Heading/Heading.tsx";
 import { Section } from "@components/Article/Section/Section.tsx";
 import { Wrap } from "@components/Article/Section/Wrap.tsx";
+import { ImageFigure } from "@components/Figure/ImageFigure.tsx";
 
 function Fx() {
     return <>
@@ -123,37 +124,22 @@ function Fx() {
 
                 <div className="images">
                     <div className="row">
-                        <figure>
-                            <img
-                                src={ prCoverWithCustomColor }
-                                alt="PR Cover with Custom Color"
-                            />
-                            <figcaption>
-                                PR Cover with Custom Color
-                            </figcaption>
-                        </figure>
+                        <ImageFigure
+                            src={ prCoverWithCustomColor }
+                            caption="PR Cover with Custom Color"
+                        />
 
-                        <figure>
-                            <img
-                                src={ prCoverInMathSweOps }
-                                alt="PR Cover in MathSwe Ops"
-                            />
-                            <figcaption>
-                                PR Cover in MathSwe Ops
-                            </figcaption>
-                        </figure>
+                        <ImageFigure
+                            src={ prCoverInMathSweOps }
+                            caption="PR Cover in MathSwe Ops"
+                        />
                     </div>
 
                     <div className="row">
-                        <figure>
-                            <img
-                                src={ releaseCoverInMathSweLegal }
-                                alt="Release Cover in MathSwe Legal"
-                            />
-                            <figcaption>
-                                Release Cover in MathSwe Legal
-                            </figcaption>
-                        </figure>
+                        <ImageFigure
+                            src={ releaseCoverInMathSweLegal }
+                            caption="Release Cover in MathSwe Legal"
+                        />
                     </div>
                 </div>
             </div>
