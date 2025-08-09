@@ -38,3 +38,66 @@ tasks.withType<KotlinCompile> {
         jvmTarget.set(JvmTarget.JVM_21)
     }
 }
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = application.mainClass.get()
+    }
+}
+
+distributions {
+    main {
+        contents {
+            from(rootDir.resolve("src/main")) {
+                include("files/**")
+            }
+        }
+    }
+}
+
+runtime {
+    modules.set(listOf("java.base"))
+
+    jpackage {
+        // It requires the package `rpm` in Linux and Wix 3 on Windows
+        // https://docs.oracle.com/en/java/javase/14/jpackage/packaging-overview.html
+
+        val currentOs = org.gradle.internal.os.OperatingSystem.current()
+
+        if (currentOs.isLinux) {
+            val installerTypeProperty = project
+                .findProperty("installerType") as String?
+
+            // Set the installer type (DEB) explicitly from the argument to
+            // avoid building RMP (building RMP on Ubuntu might fail
+            // sometimes)
+            if (installerTypeProperty != null) {
+                installerType = installerTypeProperty
+            }
+
+            // For Debian. Overrides resources (untested on RedHat)
+            installerOptions.addAll(
+                listOf(
+                    "--resource-dir",
+                    "jpackage/linux",
+                    "--verbose",
+                )
+            )
+        }
+        else if (currentOs.isWindows) {
+            imageOptions.addAll(listOf("--win-console"))
+
+            installerOptions.addAll(
+                listOf(
+                    "--resource-dir",
+                    "jpackage/windows",
+                    "--verbose",
+                    "--win-per-user-install",
+                    "--win-dir-chooser",
+                    "--win-menu",
+                )
+            )
+        }
+    }
+}
+

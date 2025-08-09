@@ -15,6 +15,18 @@ for the original prototype commands and documentation.
 Run `gradlew test` to run all tests. It doesn't log testing information if all
 tests passed.
 
+## Deploying
+
+Run `gradlew jpackage` to create a debian installer.
+
+It will fail to build if the version name in `build.gradle.kts` has a hyphen,
+like `0.1.0-dev`, so this build command is meant for releases.
+
+The packaging configuration is at [jpackage](jpackage).
+
+The package will be at [build/jpackage](build/jpackage) with the `.deb` and
+`rpm` installers of the CLI app `tsd-web---prototype`.
+
 ## Project
 
 ### Updating Gradle
