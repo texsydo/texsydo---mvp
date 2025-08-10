@@ -6,6 +6,20 @@ Run `gradlew run` to run the CLI app.
 
 Run with arguments: `gradlew run --args="{ args }"`.
 
+### Running Commands
+
+#### tsd-web---mvp entries
+
+```
+gradlew run --args="entries"
+```
+
+#### tsd-web---mvp build pi-day jekyll
+
+```
+gradlew run --args="build pi-day jekyll"
+```
+
 See
 [Automating the Platform Operations and Beyond (2023/08/31)](https://blog.mathsoftware.engineer/automating-the-platform-operations-and-beyond-2023-08-31)
 for the original prototype commands and documentation.
