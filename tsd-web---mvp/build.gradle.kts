@@ -45,15 +45,6 @@ tasks.jar {
     }
 }
 
-distributions {
-    main {
-        contents {
-            from(rootDir.resolve("src/main")) {
-                include("files/**")
-            }
-        }
-    }
-}
 
 runtime {
     modules.set(listOf("java.base"))
