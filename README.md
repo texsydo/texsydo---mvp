@@ -1,4 +1,4 @@
-<!-- Copyright (c) 2024 Tobias Briones. All rights reserved. -->
+<!-- Copyright (c) 2024-2025 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 <!-- This file is part of https://github.com/texsydo/texsydo---mvp -->
 
@@ -23,6 +23,12 @@ MVP of the Texsydo (**Tsd.Math.Software**) web app.
 
 Project Root: [./tsd.math.software---mvp](tsd.math.software---mvp).
 
+## MVP: Texsydo Web
+
+Documenting textual systems on the web.
+
+Project Root: [./tsd-web---mvp](tsd-web---mvp).
+
 ## Contact
 
 Tobias Briones: [GitHub](https://github.com/tobiasbriones)
@@ -34,7 +40,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 Providing mathematical text and art.
 
-Copyright © 2024 Tobias Briones. All rights reserved.
+Copyright © 2023-2025 Tobias Briones. All rights reserved.
 
 ### License
 
