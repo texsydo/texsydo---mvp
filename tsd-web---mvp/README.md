@@ -1,4 +1,18 @@
+<!-- Copyright (c) 2025 Tobias Briones. All rights reserved. -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!-- This file is part of https://github.com/texsydo/texsydo---mvp -->
+
 # MVP: Texsydo Web
+
+[![Project](https://mathswe-ops-services.tobiasbriones-dev.workers.dev/badge/project/texsydo)](https://tsd.math.software)
+&nbsp;
+[![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/texsydo/texsydo---mvp/edit/main/tsd-web---mvp)
+
+[![GitHub Project License](https://img.shields.io/github/license/texsydo/texsydo---mvp.svg?style=flat-square)](https://github.com/texsydo/texsydo---mvp/blob/main/LICENSE)
+
+[![GitHub Release](https://mathswe-ops-services.tobiasbriones-dev.workers.dev/badge/version/github/texsydo/texsydo---mvp?path=tsd-web---mvp)](https://github.com/texsydo/texsydo---mvp/releases/latest)
+
+Documenting textual systems on the web.
 
 ## Running the App
 
@@ -35,3 +49,21 @@ tests passed.
 
 Run `gradlew wrapper --gradle-version latest` to set the Gradle version to the
 latest in `gradle-wrapper.properties`.
+
+## Contact
+
+Tobias Briones: [GitHub](https://github.com/tobiasbriones)
+[LinkedIn](https://linkedin.com/in/tobiasbriones)
+
+## About
+
+**MVP: Texsydo Web**
+
+Documenting textual systems on the web.
+
+Copyright © 2023-2025 Tobias Briones. All rights reserved.
+
+### License
+
+This project is licensed under
+the [GNU Affero General Public License v3.0 or later License](../LICENSE).
