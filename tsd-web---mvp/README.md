@@ -12,6 +12,8 @@
 
 [![GitHub Release](https://mathswe-ops-services.tobiasbriones-dev.workers.dev/badge/version/github/texsydo/texsydo---mvp?path=tsd-web---mvp)](https://github.com/texsydo/texsydo---mvp/releases/latest)
 
+Documenting textual systems on the web.
+
 ## Running the App
 
 Run `gradlew run` to run the CLI app.
@@ -47,3 +49,21 @@ tests passed.
 
 Run `gradlew wrapper --gradle-version latest` to set the Gradle version to the
 latest in `gradle-wrapper.properties`.
+
+## Contact
+
+Tobias Briones: [GitHub](https://github.com/tobiasbriones)
+[LinkedIn](https://linkedin.com/in/tobiasbriones)
+
+## About
+
+**MVP: Texsydo Web**
+
+Documenting textual systems on the web.
+
+Copyright © 2023-2025 Tobias Briones. All rights reserved.
+
+### License
+
+This project is licensed under
+the [GNU Affero General Public License v3.0 or later License](../LICENSE).
