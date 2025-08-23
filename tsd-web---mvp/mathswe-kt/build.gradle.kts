@@ -3,17 +3,15 @@
 // This file is part of https://github.com/texsydo/texsydo---mvp
 
 plugins {
+    id("library.build")
     alias(libs.plugins.kotlin.jvm)
-
-    `java-library`
 }
 
 dependencies {
     implementation(libs.arrow.core)
     implementation(libs.arrow.fx.coroutines)
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-
+    testImplementation(libs.kotlin.test)
     testImplementation(libs.junit.jupiter.engine)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

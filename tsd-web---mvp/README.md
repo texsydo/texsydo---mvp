@@ -30,7 +30,8 @@ Texsydo Web MVP is a multimodule Gradle, Kotlin project.
 
 ### Running Tests
 
-Run `gradlew test` to run the project tests.
+Run `./gradlew test` to run the project tests or `./gradlew check` for
+additionally running verification tasks.
 
 ### Updating Gradle
 
