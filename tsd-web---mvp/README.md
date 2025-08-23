@@ -14,9 +14,23 @@
 
 Documenting textual systems on the web.
 
+## MathSweKt Library
+
+The module [mathswe-kt](mathswe-kt) is an *in-house copy* of the MathSweKt
+experimental library to reinforce FP further in MathSwe Kotlin projects.
+
+## Web MVP
+
+The main module [web](web) implements the Texsydo Web MVP specifications that
+other modules or interfaces in the modular monolith will include.
+
 ## Gradle Project
 
 Texsydo Web MVP is a multimodule Gradle, Kotlin project.
+
+### Running Tests
+
+Run `gradlew test` to run the project tests.
 
 ### Updating Gradle
 
