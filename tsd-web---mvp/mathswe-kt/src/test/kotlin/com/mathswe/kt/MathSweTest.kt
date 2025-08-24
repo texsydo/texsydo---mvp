@@ -4,46 +4,40 @@
 
 package com.mathswe.kt
 
-import org.junit.jupiter.api.Assertions.*
-import kotlin.test.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-class MathSweTest {
-    @Test
-    fun testPipeOperator() {
+class MathSweTest : StringSpec({
+    "pipe operator should apply functions in sequence" {
         val double = { x: Int -> x * 2 }
         val inc = { x: Int -> x + 1 }
         val result = 3 `---` double `---` inc // (3 * 2) + 1 = 7
 
-        assertEquals(7, result)
+        result shouldBe 7
     }
 
-    @Test
-    fun testCompositionOperator() {
+    "composition operator should compose functions correctly" {
         val double = { x: Int -> x * 2 }
         val inc = { x: Int -> x + 1 }
-        val composed = inc o double // inc(double(x)) = (x * 2) + 1
+        val composed = inc o double
 
-        assertEquals(9, composed(4))
-        assertEquals(3, composed(1))
+        composed(4) shouldBe 9
+        composed(1) shouldBe 3
     }
 
-    @Test
-    fun testApplicationOperator() {
+    "application operator should apply value to function" {
         val square = { x: Int -> x * x }
-        val result = square `$` 5 // square(5) = 25
+        val result = square `$` 5
 
-        assertEquals(25, result)
+        result shouldBe 25
     }
 
-    @Test
-    fun testOperatorsTogether() {
+    "operators should work together in a chain" {
         val double = { x: Int -> x * 2 }
         val inc = { x: Int -> x + 1 }
         val square = { x: Int -> x * x }
-
-        // Equivalent to: square(inc(double(3)))
         val result = 3 `---` double `---` inc `---` square
 
-        assertEquals(49, result) // ((3 * 2) + 1)^2 = 49
+        result shouldBe 49 // ((3 * 2) + 1)^2
     }
-}
+})
