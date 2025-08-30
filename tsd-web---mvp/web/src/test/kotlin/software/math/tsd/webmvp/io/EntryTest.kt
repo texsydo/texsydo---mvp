@@ -20,7 +20,7 @@ class EntryTest : StringSpec({
         entry.rootPath shouldBe root
         entry.relPath shouldBe Path("")
         entry.path shouldBe root
-        entry.name() shouldBe "project"
+        entry.name shouldBe "project"
     }
 
     "should create Entry with explicit relative path" {
@@ -31,7 +31,7 @@ class EntryTest : StringSpec({
         entry.rootPath shouldBe root
         entry.relPath shouldBe rel
         entry.path shouldBe Path("/project/src/main")
-        entry.name() shouldBe "main"
+        entry.name shouldBe "main"
     }
 
     "should build Entry from absolute path" {
@@ -43,7 +43,7 @@ class EntryTest : StringSpec({
         entry.rootPath shouldBe root
         entry.relPath.toString() shouldBe "/src/file.txt" // may include leading "/"
         entry.path shouldBe abs
-        entry.name() shouldBe "file.txt"
+        entry.name shouldBe "file.txt"
     }
 
     "should handle root and absolute path being the same" {
@@ -54,7 +54,7 @@ class EntryTest : StringSpec({
 
         entry.relPath.toString() shouldBe "" // empty because same path
         entry.path shouldBe root
-        entry.name() shouldBe "project"
+        entry.name shouldBe "project"
     }
 })
 

@@ -12,18 +12,23 @@ import software.math.tsd.webmvp.TextSource.*
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.name
+import kotlin.io.path.nameWithoutExtension
 
 data class Entry(val rootPath: Path, val relPath: Path = Path.of(""))
+
+val Entry.path: Path
+    get() = Path.of(rootPath.toString(), relPath.toString())
+
+val Entry.id: String
+    get() = path.nameWithoutExtension
+
+val Entry.name: String
+    get() = path.name
 
 fun newEntryFromAbsPath(rootPath: Path, absPath: Path): Entry = Entry(
     rootPath,
     Path.of(absPath.toString().removePrefix(rootPath.toString()))
 )
-
-val Entry.path: Path
-    get() = Path.of(rootPath.toString(), relPath.toString())
-
-fun Entry.name(): String = path.name
 
 fun Entry.textSource(): Option<TextSource> =
     when (path.toString().substringAfterLast('.', missingDelimiterValue = "")) {
