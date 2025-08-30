@@ -4,8 +4,12 @@
 
 package software.math.tsd.webmvp.io
 
+import arrow.core.none
+import arrow.core.some
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
+import software.math.tsd.webmvp.TextSource
+import java.nio.file.Files
 import kotlin.io.path.Path
 
 class EntryTest : StringSpec({
@@ -51,5 +55,46 @@ class EntryTest : StringSpec({
         entry.relPath.toString() shouldBe "" // empty because same path
         entry.path shouldBe root
         entry.name() shouldBe "project"
+    }
+})
+
+class ContentTest : StringSpec({
+    "Entry.textSource should detect .txt" {
+        val root = Files.createTempDirectory("root")
+        val file = Files.createFile(root.resolve("file.txt"))
+        val entry = Entry(root, file.fileName)
+
+        entry
+            .textSource()
+            .getOrNull() shouldBe TextSource.PlainText
+            .some()
+            .getOrNull()
+    }
+
+    "Entry.textSource should return none for non-txt" {
+        val root = Files.createTempDirectory("root")
+        val file = Files.createFile(root.resolve("file.docx"))
+        val entry = Entry(root, file.fileName)
+
+        entry.textSource() shouldBe none()
+    }
+
+    "loadContent should load plain text content" {
+        val root = Files.createTempDirectory("root")
+        val file = root.resolve("hello.txt")
+        Files.writeString(file, "Hello, world!")
+        val entry = Entry(root, file.fileName)
+
+        val content = loadContent(entry).getOrNull()
+
+        content!!.content shouldBe "Hello, world!"
+    }
+
+    "loadContent should return none for unsupported extension" {
+        val root = Files.createTempDirectory("root")
+        val file = Files.createFile(root.resolve("note.docx"))
+        val entry = Entry(root, file.fileName)
+
+        loadContent(entry) shouldBe none()
     }
 })
