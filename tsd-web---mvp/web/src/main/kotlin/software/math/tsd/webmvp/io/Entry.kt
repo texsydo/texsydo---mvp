@@ -9,6 +9,7 @@ import arrow.core.none
 import arrow.core.some
 import software.math.tsd.webmvp.TextSource
 import software.math.tsd.webmvp.TextSource.*
+import software.math.tsd.webmvp.Title
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.name
@@ -21,6 +22,9 @@ val Entry.path: Path
 
 val Entry.id: String
     get() = path.nameWithoutExtension
+
+val Entry.title: Title
+    get() = Title(id)
 
 val Entry.name: String
     get() = path.name
