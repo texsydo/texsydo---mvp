@@ -9,6 +9,7 @@ plugins {
 
 dependencies {
     api(project(":mathswe-kt"))
+    api(project(":system"))
 
     implementation(libs.arrow.core)
     implementation(libs.arrow.fx.coroutines)
