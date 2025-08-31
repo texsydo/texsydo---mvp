@@ -9,4 +9,4 @@ pluginManagement {
 
 rootProject.name = "tsd-web---mvp"
 
-include("mathswe-kt", "web")
+include("mathswe-kt", "system", "web")
