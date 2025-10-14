@@ -56,6 +56,51 @@ class EntryTest : StringSpec({
         entry.path shouldBe root
         entry.name shouldBe "project"
     }
+
+    "should return file name without extension when path has extension" {
+        val entry = Entry(
+            rootPath = Path("articles"),
+            relPath = Path("tech/text-article.md")
+        )
+
+        entry.id shouldBe "text-article"
+    }
+
+    "should return last path segment when path has no extension" {
+        val entry = Entry(
+            rootPath = Path("articles"),
+            relPath = Path("blog/article")
+        )
+
+        entry.id shouldBe "article"
+    }
+
+    "should handle root entries correctly" {
+        val entry = Entry(
+            rootPath = Path("articles"),
+            relPath = Path("article.md")
+        )
+
+        entry.id shouldBe "article"
+    }
+
+    "should handle directory only path" {
+        val entry = Entry(
+            rootPath = Path("articles"),
+            relPath = Path("news")
+        )
+
+        entry.id shouldBe "news"
+    }
+
+    "should handle paths with multiple dots gracefully" {
+        val entry = Entry(
+            rootPath = Path("articles"),
+            relPath = Path("dev/v1.2.3.md")
+        )
+
+        entry.id shouldBe "v1.2.3"
+    }
 })
 
 class ContentTest : StringSpec({
