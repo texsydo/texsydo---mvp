@@ -12,14 +12,35 @@ import java.nio.file.Path
 import kotlin.io.path.readText
 
 class MdHtmlTest : StringSpec({
-    val index = MarkdownContent(
+    val fpInKotlin = MarkdownContent(
         TestResources
             .pathOf(Path.of("fp-in-kotlin", "index.md"))
             .readText()
     )
 
+    val piDay = MarkdownContent(
+        TestResources
+            .pathOf(Path.of("pi-day", "index.md"))
+            .readText()
+    )
+
+    "extractTitle should return the correct title" {
+        fpInKotlin.extractTitle() shouldBe "FP in Kotlin"
+    }
+
+    "extractAbstract should return the expected abstract text" {
+        fpInKotlin.extractAbstract() shouldBe """
+            I'll document particular insights about Kotlin functional designs I figure out.
+        """.trimIndent()
+
+        piDay.extractAbstract() shouldBe """
+            Pi is my official and favorite constant and today is 3/14 day when the Pi
+            constant is celebrated.
+        """.trimIndent()
+    }
+
     "navHtml should generate expected navigation HTML" {
-        val navHtml = index.generateNav("Blog").toHtmlString()
+        val navHtml = fpInKotlin.generateNav("Blog").toHtmlString()
         val expected = """
             <nav aria-label="Navigation">
               <a class="home" href="/">
@@ -37,7 +58,7 @@ class MdHtmlTest : StringSpec({
     }
 
     "tocHtml should generate expected table of contents HTML" {
-        val tocHtml = index.generateToC().toHtmlString()
+        val tocHtml = fpInKotlin.generateToC().toHtmlString()
         val expected = """
               <nav class="toc user-select-none" aria-label="Table of Contents">
                 <a class="title" href="#">
