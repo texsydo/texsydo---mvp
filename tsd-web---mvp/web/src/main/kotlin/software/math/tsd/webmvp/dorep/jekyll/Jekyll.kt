@@ -8,7 +8,12 @@ import arrow.core.Either
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.getOrElse
+import arrow.core.left
+import arrow.core.right
+import software.math.tsd.webmvp.md.MarkdownContent
+import java.io.IOException
 import java.nio.file.Path
+import kotlin.io.path.writeText
 
 data class FrontMatter(
     val permalink: String,
@@ -43,3 +48,19 @@ fun FrontMatter.toMarkdownString(): String {
         .append("\n")
         .toString()
 }
+
+data class JekyllIndex(
+    val frontMatter: FrontMatter,
+    val nav: Nav,
+    val toc: Nav,
+    val index: MarkdownContent,
+    val subdirNav: Option<Div>,
+)
+
+fun JekyllIndex.toMarkdownString(): String = """
+    |'${frontMatter.toMarkdownString()}
+    |'
+    |'$index
+    |'
+    |'${subdirNav.map(Div::toHtmlString).getOrElse { "" }}
+""".trimMargin("|'")

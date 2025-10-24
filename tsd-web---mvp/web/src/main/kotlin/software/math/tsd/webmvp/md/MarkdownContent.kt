@@ -8,7 +8,9 @@ import software.math.tsd.webmvp.fromLowercaseToTitleCase
 import software.math.tsd.webmvp.io.Content
 import software.math.tsd.webmvp.io.title
 
-data class MarkdownContent(val value: String)
+data class MarkdownContent(val value: String) {
+    override fun toString(): String = value
+}
 
 fun Content.plainTextToMarkdownContent(): MarkdownContent =
     MarkdownContent(
